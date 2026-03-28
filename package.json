@@ -25,6 +25,8 @@
     "eslint": "^10.1.0",
     "eslint-config-next": "^16.2.1",
     "jest": "^30.3.0",
-    "jest-environment-jsdom": "^30.3.0"
+    "jest-environment-jsdom": "^30.3.0",
+    "prettier": "^3.8.1",
+    "prop-types": "^15.8.1"
   }
 }
