@@ -67,14 +67,48 @@ npm run dev
 
 ---
 
-## 🌐 Deploy to Vercel (One Click)
+## 🌐 Deploy to Google Cloud Run
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-username/intentbridge-ai)
+This project is fully containerized for Cloud Run. Push to `main` and GitHub Actions handles the rest.
 
-**After deploying**, add your Gemini API key in Vercel:
-> Project → Settings → Environment Variables → Add `NEXT_PUBLIC_GEMINI_API_KEY`
+### 1. Set up GitHub Secrets
 
-Alternatively, users can enter their key directly in the app UI via the **🔑 API** button.
+In your GitHub repo → **Settings → Secrets and variables → Actions**, add:
+
+| Secret | Value |
+|---|---|
+| `GCP_PROJECT_ID` | Your GCP project ID (e.g. `my-project-123`) |
+| `GCP_SA_KEY` | JSON key of a Service Account with roles: `Cloud Run Admin`, `Storage Admin`, `Service Account User` |
+| `NEXT_PUBLIC_GEMINI_API_KEY` | Your Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey) |
+
+### 2. Push to GitHub
+
+```bash
+git push origin main
+```
+
+The workflow in `.github/workflows/deploy.yml` will automatically:
+1. Build the Docker image (`Dockerfile`)
+2. Push to Google Container Registry (`gcr.io`)
+3. Deploy to Cloud Run in `us-central1`
+
+### 3. Manually deploy (optional)
+
+```bash
+# Build & push
+docker build --build-arg NEXT_PUBLIC_GEMINI_API_KEY=your_key -t gcr.io/YOUR_PROJECT/intentbridge-ai .
+docker push gcr.io/YOUR_PROJECT/intentbridge-ai
+
+# Deploy
+gcloud run deploy intentbridge-ai \
+  --image gcr.io/YOUR_PROJECT/intentbridge-ai \
+  --region us-central1 \
+  --platform managed \
+  --allow-unauthenticated \
+  --port 8080
+```
+
+> ⚙️ To change the region, edit `REGION` in `.github/workflows/deploy.yml`.
 
 ---
 
