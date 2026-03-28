@@ -6,9 +6,9 @@ on:
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
-  SERVICE_NAME: intentbridge-ai
-  REGION: us-central1           # Change to your preferred region
-  IMAGE: gcr.io/${{ secrets.GCP_PROJECT_ID }}/intentbridge-ai
+  SERVICE_NAME: promptwars-project
+  REGION: europe-west1          
+  IMAGE: gcr.io/${{ secrets.GCP_PROJECT_ID }}/promptwars-project
 
 jobs:
   deploy:
