@@ -158,6 +158,34 @@ nexus/
 
 ---
 
+## 🧪 Testing & Maintainability
+
+IntentBridge AI is engineered for long-term maintainability, high testability, and strict validation. The architecture cleanly separates UI, domain logic, and API orchestration, making it easy to test each layer independently.
+
+### Testing Strategy
+
+1. **Unit Testing (`jest`)**: Core business logic and schema definitions (e.g., `lib/prompts.js`) are tested to ensure the AI directives don't drift over time.
+2. **Component Testing (`@testing-library/react`)**: UI elements like the `ActionCard` are verified to ensure that critical urgency styles, confidence scores, and safety flags render flawlessly.
+3. **Mocking External APIs**: The lightweight `lib/gemini.js` wrapper is designed so the Gemini SDK can be easily mocked, allowing for fast, deterministic unit testing without hitting the live Gemini API or incurring latency/costs.
+
+### Running Tests
+
+We use **Jest** and **React Testing Library** for lightning-fast execution.
+
+```bash
+# Run all tests once
+npm test
+
+# Run tests in watch mode during development
+npm run test:watch
+```
+
+### Extending the Codebase
+- **Adding new Domains**: Simply add a new constant to `lib/prompts.js` and update the `DOMAINS` array in `app/dashboard/page.js`. The test suite automatically validates that all domains have matching prompt pairs and required schemas.
+- **Modifying Outputs**: The `ActionDashboard` dynamically renders whatever structured data Gemini outputs, so UI changes rarely require breaking backend logic.
+
+---
+
 ## 🔒 Security & Privacy
 
 - **API key is never logged or stored server-side** — it lives only in your `.env.local` or Vercel env vars
