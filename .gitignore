@@ -1,0 +1,3 @@
+nexus/node_modules/
+nexus/.env.local
+nexus/.env.example
