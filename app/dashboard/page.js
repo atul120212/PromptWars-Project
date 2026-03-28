@@ -34,16 +34,12 @@ function DashboardContent() {
     const [isProcessing, setIsProcessing] = useState(false);
     const [result, setResult] = useState(null);
     const [sessions, setSessions] = useState([]);
-    const [apiKey, setApiKey] = useState('');
-    const [showApiSetup, setShowApiSetup] = useState(false);
     const [feedbackMap, setFeedbackMap] = useState({});
 
     // Load sessions from localStorage
     useEffect(() => {
         const saved = localStorage.getItem('intentbridge_sessions');
         if (saved) setSessions(JSON.parse(saved));
-        const key = localStorage.getItem('intentbridge_apikey');
-        if (key) setApiKey(key);
     }, []);
 
     const saveSession = (input, res) => {
@@ -65,16 +61,6 @@ function DashboardContent() {
     };
 
     const runAnalysis = async (type, content, imageBase64 = null, imageMimeType = null) => {
-        const key = apiKey || process.env.NEXT_PUBLIC_GEMINI_API_KEY;
-        if (!key || key === 'your_gemini_api_key_here') {
-            setShowApiSetup(true);
-            return;
-        }
-        // Temporarily inject key for client-side use
-        if (apiKey) {
-            process.env.NEXT_PUBLIC_GEMINI_API_KEY = apiKey;
-        }
-
         setIsProcessing(true);
         setResult(null);
 
@@ -83,11 +69,7 @@ function DashboardContent() {
             setResult(res);
             saveSession(content, res);
         } catch (err) {
-            if (err.message === 'GEMINI_API_KEY_MISSING') {
-                setShowApiSetup(true);
-            } else {
-                setResult({ success: false, error: err.message });
-            }
+            setResult({ success: false, error: err.message || 'Server error occurred' });
         } finally {
             setIsProcessing(false);
         }
@@ -100,11 +82,6 @@ function DashboardContent() {
 
     const handleFeedback = (actionId, type) => {
         setFeedbackMap(prev => ({ ...prev, [actionId]: type }));
-    };
-
-    const saveApiKey = () => {
-        localStorage.setItem('intentbridge_apikey', apiKey);
-        setShowApiSetup(false);
     };
 
     return (
@@ -130,49 +107,7 @@ function DashboardContent() {
                         </button>
                     ))}
                 </div>
-
-                <button
-                    className="btn btn-secondary"
-                    style={{ fontSize: 13, padding: '7px 14px' }}
-                    onClick={() => setShowApiSetup(true)}
-                    title="Configure API Key"
-                >
-                    🔑 API
-                </button>
             </nav>
-
-            {/* API Key Setup Modal */}
-            {showApiSetup && (
-                <div className={styles.modalOverlay} onClick={() => setShowApiSetup(false)}>
-                    <div className={styles.modal} onClick={e => e.stopPropagation()}>
-                        <h3>🔑 Configure Gemini API Key</h3>
-                        <p>
-                            Get your free key from{' '}
-                            <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer"
-                                style={{ color: 'var(--accent-cyan)' }}>
-                                Google AI Studio →
-                            </a>
-                        </p>
-                        <input
-                            type="password"
-                            className="input-field"
-                            style={{ padding: '12px 14px', marginTop: 12 }}
-                            placeholder="AIzaSy..."
-                            value={apiKey}
-                            onChange={e => setApiKey(e.target.value)}
-                            autoFocus
-                        />
-                        <div style={{ display: 'flex', gap: 10, marginTop: 12 }}>
-                            <button className="btn btn-primary" onClick={saveApiKey} style={{ flex: 1 }}>
-                                💾 Save & Continue
-                            </button>
-                            <button className="btn btn-secondary" onClick={() => setShowApiSetup(false)}>
-                                Cancel
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
 
             {/* Main Layout */}
             <div className={styles.main}>

@@ -79,7 +79,7 @@ In your GitHub repo → **Settings → Secrets and variables → Actions**, add:
 |---|---|
 | `GCP_PROJECT_ID` | Your GCP project ID (e.g. `my-project-123`) |
 | `GCP_SA_KEY` | JSON key of a Service Account with roles: `Cloud Run Admin`, `Storage Admin`, `Service Account User` |
-| `NEXT_PUBLIC_GEMINI_API_KEY` | Your Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey) |
+| `GEMINI_API_KEY` | Your Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey) |
 
 ### 2. Push to GitHub
 
@@ -96,7 +96,7 @@ The workflow in `.github/workflows/deploy.yml` will automatically:
 
 ```bash
 # Build & push
-docker build --build-arg NEXT_PUBLIC_GEMINI_API_KEY=your_key -t gcr.io/YOUR_PROJECT/intentbridge-ai .
+docker build --build-arg GEMINI_API_KEY=your_key -t gcr.io/YOUR_PROJECT/intentbridge-ai .
 docker push gcr.io/YOUR_PROJECT/intentbridge-ai
 
 # Deploy

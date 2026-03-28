@@ -5,10 +5,10 @@ on:
     branches: [main, master]
 
 env:
-  PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+  PROJECT_ID: mineral-weaver-491605-f6
   SERVICE_NAME: promptwars-project
   REGION: europe-west1          
-  IMAGE: gcr.io/${{ secrets.GCP_PROJECT_ID }}/promptwars-project
+  IMAGE: gcr.io/mineral-weaver-491605-f6/promptwars-project
 
 jobs:
   deploy:
@@ -38,7 +38,7 @@ jobs:
       - name: Build Docker image
         run: |
           docker build \
-            --build-arg NEXT_PUBLIC_GEMINI_API_KEY=${{ secrets.NEXT_PUBLIC_GEMINI_API_KEY }} \
+            --build-arg GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }} \
             -t ${{ env.IMAGE }}:${{ github.sha }} \
             -t ${{ env.IMAGE }}:latest \
             .
@@ -61,7 +61,7 @@ jobs:
             --memory 512Mi \
             --cpu 1 \
             --max-instances 10 \
-            --set-env-vars NEXT_PUBLIC_GEMINI_API_KEY=${{ secrets.NEXT_PUBLIC_GEMINI_API_KEY }}
+            --set-env-vars GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}
 
       # 8. Print the service URL
       - name: Get Service URL
