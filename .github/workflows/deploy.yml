@@ -8,7 +8,8 @@ env:
   PROJECT_ID: mineral-weaver-491605-f6
   SERVICE_NAME: promptwars-project
   REGION: europe-west1          
-  IMAGE: gcr.io/mineral-weaver-491605-f6/promptwars-project
+  # IMAGE: gcr.io/mineral-weaver-491605-f6/promptwars-project
+  IMAGE: europe-west1-docker.pkg.dev/mineral-weaver-491605-f6/promptwars-project/app
 
 jobs:
   deploy:
@@ -32,7 +33,8 @@ jobs:
 
       # 4. Configure Docker to use the gcloud credential helper
       - name: Configure Docker for GCR
-        run: gcloud auth configure-docker --quiet
+        # run: gcloud auth configure-docker --quiet
+        run: gcloud auth configure-docker europe-west1-docker.pkg.dev --quiet
 
       # 5. Build the Docker image (inject API key as build-arg)
       - name: Build Docker image
@@ -43,8 +45,8 @@ jobs:
             -t ${{ env.IMAGE }}:latest \
             .
 
-      # 6. Push to Google Container Registry
-      - name: Push to GCR
+      # 6. Push to Artifact Registry
+      - name: Push to Artifact Registry
         run: |
           docker push ${{ env.IMAGE }}:${{ github.sha }}
           docker push ${{ env.IMAGE }}:latest
