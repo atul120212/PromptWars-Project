@@ -1,0 +1,461 @@
+PASS __tests__/gemini.test.js
+PASS __tests__/VoiceInput.test.jsx
+FAIL __tests__/ActionDashboard.test.jsx (5.762 s)
+  ● ActionDashboard Component › renders successful result
+
+    TestingLibraryElementError: Unable to find an element with the text: Patient has chest pain. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"dashboard"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"summaryHeader domain-bg-MEDICAL"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"summaryLeft"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"intentText"[39m
+              [36m>[39m
+                [0mMedical Emergency[0m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"summaryMeta"[39m
+              [36m>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"badge badge-critical"[39m
+                [36m>[39m
+                  [0mCRITICAL[0m
+                [36m</span>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"chip domain-MEDICAL"[39m
+                [36m>[39m
+                  [0mMEDICAL[0m
+                [36m</span>[39m
+                [36m<span[39m
+                  [33mclass[39m=[32m"actionCount"[39m
+                [36m>[39m
+                  [0m2[0m
+                  [0m actions[0m
+                [36m</span>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"confidenceBlock"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"confidenceValue"[39m
+                [33mstyle[39m=[32m"color: var(--accent-green);"[39m
+              [36m>[39m
+                [0m95[0m
+                [0m%[0m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"confidenceLabel"[39m
+              [36m>[39m
+                [0mConfidence[0m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"confidence-bar"[39m
+                [33mstyle[39m=[32m"width: 60px;"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"confidence-fill"[39m
+                  [33mstyle[39m=[32m"width: 95%; background: var(--accent-green);"[39m
+                [36m/>[39m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"factsList"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sectionLabel"[39m
+            [36m>[39m
+              [0m📋 Key Facts Extracted[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"facts"[39m
+            [36m>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"fact"[39m
+              [36m>[39m
+                [0m· [0m
+                [0mPatient has chest pain[0m
+              [36m</div>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"entities"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"entityGroup"[39m
+            [36m>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"entityKey"[39m
+              [36m>[39m
+                [0msymptoms[0m
+                [0m:[0m
+              [36m</span>[39m
+              [36m<span[39m
+                [33mclass[39m=[32m"chip"[39m
+              [36m>[39m
+                [0mchest pain[0m
+              [36m</span>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"filters"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"filterBtn filterBtnActive"[39m
+            [36m>[39m
+              [0mALL[0m
+              [0m [0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"filterBtn "[39m
+            [36m>[39m
+              [0mCRITICAL[0m
+              [0m [0m
+              [0m(1)[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"filterBtn "[39m
+            [36m>[39m
+              [0mHIGH[0m
+              [0m [0m
+              [0m(1)[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"filterBtn "[39m
+            [36m>[39m
+              [0mMEDIUM[0m
+              [0m [0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"filterBtn "[39m
+            [36m>[39m
+              [0mLOW[0m
+              [0m [0m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"actionsList"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sectionLabel"[39m
+            [36m>[39m
+              [0m⚡ Recommended Actions[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mdata-testid[39m=[32m"mock-action-card"[39m
+            [36m>[39m
+              [0mDispatch Ambulance[0m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mdata-testid[39m=[32m"mock-action-card"[39m
+            [36m>[39m
+              [0mCheck Vitals[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"safetySection"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"toggleBtn"[39m
+            [36m>[39m
+              [0m🛡️ Safety Checks ([0m
+              [0m1[0m
+              [0m/[0m
+              [0m1[0m
+              [0m passed)[0m
+              [36m<span>[39m
+                [0m▼[0m
+              [36m</span>[39m
+            [36m</button>[39m
+          [36m</div>[39m
+          [36m<button[39m
+            [33mclass[39m=[32m"toggleBtn"[39m
+          [36m>[39m
+            [0m📄 View Raw JSON Output [0m
+            [36m<span>[39m
+              [0m▼[0m
+            [36m</span>[39m
+          [36m</button>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m 51 |[39m         expect(screen[33m.[39mgetByText([32m'MEDICAL'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m 52 |[39m         expect(screen[33m.[39mgetByText([32m'95%'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+    [31m[1m>[22m[39m[90m 53 |[39m         expect(screen[33m.[39mgetByText([32m'Patient has chest pain'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                       [31m[1m^[22m[39m
+     [90m 54 |[39m         expect(screen[33m.[39mgetByText([32m'symptoms:'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m 55 |[39m
+     [90m 56 |[39m         [90m// Check mocked ActionCards[39m[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:76:38
+      at node_modules/@testing-library/dom/dist/query-helpers.js:52:17
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (__tests__/ActionDashboard.test.jsx:53:23)
+
+PASS __tests__/prompts.test.js
+FAIL __tests__/ImageUpload.test.jsx (6.977 s)
+  ● ImageUpload Component › clears file when clear button is clicked
+
+    Found multiple elements with the text: test.pdf
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<span>[39m
+      [0mtest.pdf[0m
+    [36m</span>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<div[39m
+      [33mclass[39m=[32m"fileName"[39m
+    [36m>[39m
+      [0mtest.pdf[0m
+    [36m</div>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"container"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"header"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"label"[39m
+            [36m>[39m
+              [0m🖼️ Image / Document Upload[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"fileSize"[39m
+            [36m>[39m
+              [0m0.0[0m
+              [0m KB[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"filePreview"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"pdfPreview"[39m
+            [36m>[39m
+              [36m<span>[39m
+                [0m📄[0m
+              [36m</span>[39m
+              [36m<span>[39m
+                [0mtest.pdf[0m
+              [36m</span>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"fileName"[39m
+            [36m>[39m
+              [0mtest.pdf[0m
+            [36m</div>[39m
+          [36m</div>[39m
+          [36m<textarea[39m
+            [33mclass[39m=[32m"input-field"[39m
+            [33mplaceholder[39m=[32m"Optional: Add context or description (e.g. 'This is a medical report from 2024')"[39m
+            [33mrows[39m=[32m"3"[39m
+          [36m/>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"actions"[39m
+          [36m>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-primary"[39m
+            [36m>[39m
+              [0m⚡ Analyze with Gemini Vision[0m
+            [36m</button>[39m
+            [36m<button[39m
+              [33mclass[39m=[32m"btn btn-secondary"[39m
+            [36m>[39m
+              [0m🗑 Clear[0m
+            [36m</button>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m 62 |[39m         fireEvent[33m.[39mchange(input)[33m;[39m
+     [90m 63 |[39m
+    [31m[1m>[22m[39m[90m 64 |[39m         [36mawait[39m waitFor(() [33m=>[39m {
+     [90m    |[39m                      [31m[1m^[22m[39m
+     [90m 65 |[39m             expect(screen[33m.[39mgetByText([32m'test.pdf'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m 66 |[39m         })[33m;[39m
+     [90m 67 |[39m[0m
+
+      at waitForWrapper (node_modules/@testing-library/dom/dist/wait-for.js:163:27)
+      at Object.<anonymous> (__tests__/ImageUpload.test.jsx:64:22)
+
+PASS __tests__/ActionCard.test.jsx (6.35 s)
+FAIL __tests__/AuditTrail.test.jsx (7.656 s)
+  ● AuditTrail Component › renders sessions list
+
+    TestingLibraryElementError: Found multiple elements with the text: /MEDICAL/i
+
+    Here are the matching elements:
+
+    Ignored nodes: comments, script, style
+    [36m<span[39m
+      [33mclass[39m=[32m"sessionDomain"[39m
+    [36m>[39m
+      [0m🏥[0m
+      [0m [0m
+      [0mMEDICAL[0m
+    [36m</span>[39m
+
+    Ignored nodes: comments, script, style
+    [36m<span[39m
+      [33mclass[39m=[32m"sessionIntent"[39m
+    [36m>[39m
+      [0mMedical Issue[0m
+    [36m</span>[39m
+
+    (If this is intentional, then use the `*AllBy*` variant of the query (like `queryAllByText`, `getAllByText`, or `findAllByText`)).
+
+    Ignored nodes: comments, script, style
+    [36m<body>[39m
+      [36m<div>[39m
+        [36m<div[39m
+          [33mclass[39m=[32m"container"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"header"[39m
+          [36m>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"title"[39m
+            [36m>[39m
+              [0m📋 Audit Trail[0m
+            [36m</span>[39m
+            [36m<span[39m
+              [33mclass[39m=[32m"count"[39m
+            [36m>[39m
+              [0m2[0m
+              [0m sessions[0m
+            [36m</span>[39m
+          [36m</div>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"list"[39m
+          [36m>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sessionItem"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"sessionHeader"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"sessionLeft"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"sessionDomain"[39m
+                  [36m>[39m
+                    [0m🏥[0m
+                    [0m [0m
+                    [0mMEDICAL[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"sessionIntent"[39m
+                  [36m>[39m
+                    [0mMedical Issue[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"sessionRight"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"badge badge-high"[39m
+                  [36m>[39m
+                    [0mHIGH[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"sessionTime"[39m
+                  [36m>[39m
+                    [0m3:30:00 pm[0m
+                  [36m</span>[39m
+                  [36m<span>[39m
+                    [0m▼[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+            [36m<div[39m
+              [33mclass[39m=[32m"sessionItem"[39m
+            [36m>[39m
+              [36m<button[39m
+                [33mclass[39m=[32m"sessionHeader"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"sessionLeft"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"sessionDomain"[39m
+                  [36m>[39m
+                    [0m🚨[0m
+                    [0m [0m
+                    [0mEMERGENCY[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"sessionIntent"[39m
+                  [36m>[39m
+                    [0mFire reported[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"sessionRight"[39m
+                [36m>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"badge badge-critical"[39m
+                  [36m>[39m
+                    [0mCRITICAL[0m
+                  [36m</span>[39m
+                  [36m<span[39m
+                    [33mclass[39m=[32m"sessionTime"[39m
+                  [36m>[39m
+                    [0m4:30:00 pm[0m
+                  [36m</span>[39m
+                  [36m<span>[39m
+                    [0m▼[0m
+                  [36m</span>[39m
+                [36m</div>[39m
+              [36m</button>[39m
+            [36m</div>[39m
+          [36m</div>[39m
+        [36m</div>[39m
+      [36m</div>[39m
+    [36m</body>[39m
+
+    [0m [90m 40 |[39m         expect(screen[33m.[39mgetByText([32m'2 sessions'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m 41 |[39m
+    [31m[1m>[22m[39m[90m 42 |[39m         expect(screen[33m.[39mgetByText([35m/MEDICAL/i[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m    |[39m                       [31m[1m^[22m[39m
+     [90m 43 |[39m         expect(screen[33m.[39mgetByText([32m'Medical Issue'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m 44 |[39m         expect(screen[33m.[39mgetByText([32m'HIGH'[39m))[33m.[39mtoBeInTheDocument()[33m;[39m
+     [90m 45 |[39m[0m
+
+      at Object.getElementError (node_modules/@testing-library/dom/dist/config.js:37:19)
+      at getElementError (node_modules/@testing-library/dom/dist/query-helpers.js:20:35)
+      at getMultipleElementsFoundError (node_modules/@testing-library/dom/dist/query-helpers.js:23:10)
+      at node_modules/@testing-library/dom/dist/query-helpers.js:55:13
+      at node_modules/@testing-library/dom/dist/query-helpers.js:95:19
+      at Object.getByText (__tests__/AuditTrail.test.jsx:42:23)
+
+PASS __tests__/TextInput.test.jsx (9.726 s)
+
+Test Suites: 3 failed, 5 passed, 8 total
+Tests:       3 failed, 39 passed, 42 total
+Snapshots:   0 total
+Time:        18.947 s
+Ran all test suites.
